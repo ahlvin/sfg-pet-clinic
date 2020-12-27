@@ -40,13 +40,13 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
 //        vet1.setId(1L);
         vet1.setFirstName("Sam");
-        vet1.setLastName("Axe");
+        vet1.setLastName("Axe1");
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
 //        vet2.setId(1L);
         vet2.setFirstName("Sam");
-        vet2.setLastName("Axe");
+        vet2.setLastName("Axe2");
         vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
