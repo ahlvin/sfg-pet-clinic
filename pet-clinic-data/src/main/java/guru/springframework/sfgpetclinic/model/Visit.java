@@ -3,9 +3,9 @@ package guru.springframework.sfgpetclinic.model;
 import java.time.LocalDate;
 
 public class Visit extends BaseEntity {
-   private LocalDate date;
-   private String description;
-   private Pet pet;
+    private LocalDate date;
+    private String description;
+    private Pet pet;
 
     public LocalDate getDate() {
         return date;
