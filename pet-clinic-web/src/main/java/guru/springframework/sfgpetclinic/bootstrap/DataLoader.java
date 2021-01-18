@@ -16,6 +16,7 @@ public class DataLoader implements CommandLineRunner {
     private final SpecialityServices specialityServices;
     private final VisitService visitService;
 
+    @Autowired
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
                       SpecialityServices specialityServices, VisitService visitService) {
         this.ownerService = ownerService;
@@ -25,15 +26,13 @@ public class DataLoader implements CommandLineRunner {
         this.visitService = visitService;
     }
 
-    @Autowired
-
 
     @Override
     public void run(String... args) throws Exception {
 
         int count = petTypeService.findAll().size();
 
-        if (count == 0 ) loadData();
+        if (count == 0) loadData();
     }
 
     private void loadData() {
@@ -90,7 +89,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        Visit catVisit =  new Visit();
+        Visit catVisit = new Visit();
         catVisit.setPet(fionasCat);
         catVisit.setDate(LocalDate.now());
         catVisit.setDescription("Sneezy Kitty");
@@ -115,4 +114,6 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Vets....");
     }
+
+
 }
